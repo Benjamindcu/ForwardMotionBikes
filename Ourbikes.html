@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="FRWDstyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Forward Motion Bikes - Your go-to source for mountain bike reviews, tips, and news. Explore our in-depth reviews of the best mountain bikes,     including the new Trek Slash, The best Trek Slash review.">
+    <meta name="keywords" content="Mountain bikes, Trek Slash 9.8, Trek Slash review, MTB reviews, mountain biking , Trek full suspension, cycling">
+<title>Forward Motion Bikes - In-depth Trek Slash Review, Take a closer look at the all new Trek Slash, Best Review</title>
+</head>
+
+<body>
+    <h1> Forward Motion Bikes </h1>
+    <nav> 
+        <a href="FrwdmtnHome.html">Home</a>  
+        <a href="Ourbikes.html">Trek Slash Review</a> 
+        <a href="MTBWeather.html">Weather for Mountain Biking Today</a>  
+        <a href="Contactus.html"> Contact us</a>
+    </nav>
+
+<!-- Complex Form of specs of the bike -->
+    <table border="1" cellspacing="0" cellpadding="8">
+        <tr>
+            <th>Trek Slash 9.8 Specifications</th>
+            <th>Components</th>
+        </tr>
+        <tr>
+            <td>Frame</td>
+            <td>Trek Slash Gen 5 Carbon fibre</td>
+        </tr>
+        <tr>
+            <td>Wheels</td>
+            <td>Bontrager Line elite 30 carbon wheelset</td>
+        </tr>
+        <tr>
+            <td>Drivetrain</td>
+            <td>Shimano XT</td>
+        </tr>
+        <tr>
+            <td>Brakes</td>
+            <td>Shimano Xt 4 piston Brakes</td>
+        </tr>
+        <tr>
+            <td>Suspension Fork</td>
+            <td>Rockshox Zeb Select plus 170mm</td>
+        </tr>
+        <tr>
+            <td>Rear Shock</td>
+            <td>Rockshox Super Deluxe Ultimate 170mm </td>
+        </tr>
+        <tr>
+            <td>Tyres</td>
+            <td>Bontrager SE4/5 tyres 29x2.4</td>
+        </tr>
+        <tr>
+            <td>Handlebars</td>
+            <td>Bontrager Line elite carbon handlebars 30mm x 820mm</td>
+        </tr>
+        <tr>
+            <td>Dropper Post</td>
+            <td>Bontrager Line elite droppper post 150mm</td>
+        </tr>
+   
+    </table>
+
+<!-- Photo gallery of the bike -->
+    <div class="slideshow-container2">
+        <img id="slideshow" alt="Slideshow image" width="700" height="380">
+    </div>
+
+<!-- Buttom to change image -->
+    <button onclick="showNextImage()">Next Image</button>
+    <a href="https://www.trekbikes.com/ie/en_IE/" target="_blank"
+        >@Images Provided by Trek Bikes</a <br>
+
+<!-- line break -->
+    <hr>
+
+    <h1> Our Review </h1>
+<!-- Youtube video -->
+    <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/pfECwILwlrg" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen class="PicRight">
+    </iframe>
+
+    <p2> The Trek Slash 9.8 is an Amazing bike, it blew all of our testers away by its capabilities, and how it handled over rough terrain. The bike comes with a OCLV 500 carbon fiber frame. This frame provides excellent shock absorbtion, whilst also being stiff at the same time. The paint job impressed us all. This gorgeous yellow colour really compliments the shape of the bike. The bike is equipped with some top class components. Including a Shimano XT drivetrain and brakes, paired up with a Rockshox ZEB fork and Super Deluxe shock. The suspension on the bike keeps it well planted and easy to plough over rough obstacles. The bike is rolling on 29 inch wheels made of carbon fibre. These are strong and light at the same time. Overall we where extremely impressed by the bikes performance. We where slighly dissapointed by the price point of the bike, as it is almost €1000 euro more expensive than its competitors. If your in the market for a fancy well performing mountain bike with excellent after sales servicing, this is definitely an option to consider. <br> Written by Benjamin Caullier   </p2>
+
+<!-- Java script for photo gallery -->
+    <script>
+        // Images for gallery
+        const images = ["Slash.jpg", "Slash2.jpg", "Slash3.jpg", "Slash4.jpg", "Slash5.jpg"];
+        
+        // Start with the first image
+        let currentIndex = 0;
+
+        function showNextImage() 
+            {const slideshow = document.getElementById("slideshow");
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            slideshow.src = images[currentIndex];}
+
+        // Display the first image immediately when the page loads
+        window.onload = function() {document.getElementById("slideshow").src = images[currentIndex];};
+    </script>
+
+</body>
+</html>
+
+<footer>
+ &copy; 2024 Forward Motion Bikes |
+</footer>
+

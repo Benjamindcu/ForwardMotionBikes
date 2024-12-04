@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="FRWDstyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Forward Motion Bikes - Your go-to source for mountain bike reviews, tips, and news. Read our in-depth reviews of the best mountain bikes, including the new Trek Slash, and get expert advice on biking trails.">
+    <meta name="keywords" content="Mountain bikes, bike reviews, Trek Slash review, MTB reviews, mountain biking tips, biking trails, cycling community">
+    <title>Forward Motion Bikes - The best Mountain Bike Reviews on the Planet</title>
+</head>
+
+<body>
+    <h1> Forward Motion Bikes </h1>
+    <nav> 
+        <a href="FrwdmtnHome.html">Home</a>  
+        <a href="Ourbikes.html">Trek Slash Review</a> 
+        <a href="MTBWeather.html">Weather for Mountain Biking Today</a> 
+        <a href="Contactus.html"> Contact us</a>
+    </nav>
+
+<!-- Slideshow -->
+    <div class="slideshow-container">
+        <img id="slideshow" src="Cover image 1.jpg" alt="Slideshow image" width="700" height="380">
+    </div>
+
+    <h2> What is Forward Motion Bikes? </h2>
+    <p> Here at Forward Motion Bikes we are the best independent mountain bike review company in the industry. We give you our honest and unbiased reviews, with all our reviewed bikes being tried and tested. Forward Motion Bikes is your one-stop website if you're looking to buy a new bike. We have over 12 individual testers with over 10 years experience each in the industry, providing you with the best and most up-to-date reviews. </p>
+
+<!-- Java Script to make the slide show -->
+    <script>
+        // Images in slideshow
+        const images = ["Cover image 1.jpg", "Cover image 2.jpg", "Cover image 3.jpg"];
+        let currentIndex = 0;
+
+        // Function to change the image
+        function showNextImage() {
+            const slideshow = document.getElementById("slideshow");
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            slideshow.src = images[currentIndex];
+        }
+
+        // Set interval to switch images every 1.5 seconds
+        setInterval(showNextImage, 1500);
+
+        // Display first image when page is loaded
+        window.onload = function() {
+            const slideshow = document.getElementById("slideshow");
+            slideshow.src = images[currentIndex]; // Set the first image on load
+        };
+    </script>
+
+</body>
+
+<footer>
+    &copy; 2024 Forward Motion Bikes |
+</footer>
+
+</html>
+

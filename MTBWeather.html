@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="FRWDstyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Forward Motion Bikes - Your go-to source for mountain bike reviews, tips, and news. Explore our in-depth reviews of the best mountain bikes,    including the new Trek Slash, and get expert advice on all things cycling.">
+    <meta name="keywords" content="Mountain bikes, bike reviews, Weather, MTB reviews, mountain biking tips, biking weather, cycling community">
+<title>Forward Motion Bikes - Weather for Mountain Biking, updated and accurate</title>
+</head>
+
+<body>
+    <h1> Forward Motion Bikes </h1>
+
+    <nav> 
+        <a href="FrwdmtnHome.html">Home</a>  
+        <a href="Ourbikes.html">Trek Slash Review</a> 
+        <a href="MTBWeather.html">Weather for Mountain Biking Today</a>  
+        <a href="Contactus.html"> Contact us</a>
+    </nav>
+
+    <h2>Is the weather good where you are for Mountain biking today</h2>
+
+    <button2 onclick="getLocation()">Get Weather</button2>
+    <p id="weatherInfo">Click for weather information.</p>
+    <img src="https://www.predatorridge.com/wp-content/uploads/mountain-biking-blog.jpg" class="center-image" >
+
+<!-- Java Script for weather API -->
+    <script>
+        const weatherInfo = document.getElementById("weatherInfo");
+
+        function getLocation() {if (navigator.geolocation) {navigator.geolocation.getCurrentPosition(getWeather, showError);}
+         else {weatherInfo.innerHTML = "Geolocation is not supported by this browser.";
+               weatherInfo.className = 'error';}}
+
+        function getWeather(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const apiKey = "dbe74a42f6e31131656f381245bfa29e"; 
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+            fetch(url)
+                .then(response => {if (!response.ok) {throw new Error("Weather data could not be found at your location. Please check the API key and URL.");}
+                return response.json(); })
+                .then(data => {
+                    // Check if the data received is valid
+                    if (data && data.main && data.weather && data.name) 
+                        {const temp = data.main.temp;
+                        const description = data.weather[0].description;
+                        const location = data.name;
+                        weatherInfo.innerHTML = `Location: ${location}<br>
+                                                 Temperature: ${temp} °C<br>
+                                                 Weather: ${description}`;
+                        weatherInfo.className = 'success';} 
+                        else {weatherInfo.innerHTML = "Weather data is incomplete.";
+                        weatherInfo.className = 'error';}})
+                .catch(error => {weatherInfo.innerHTML = "Error fetching weather data. Please try again later.";
+                        weatherInfo.className = 'error';
+                        console.error("Fetch error:", error); }); }
+
+              function showError(error) 
+                 {switch(error.code) 
+                 {case error.PERMISSION_DENIED:
+                    weatherInfo.innerHTML = "User denied the request for Geolocation.";
+                    break;
+                 case error.POSITION_UNAVAILABLE:
+                    weatherInfo.innerHTML = "Location information is unavailable.";
+                    break;
+                 case error.TIMEOUT:
+                    weatherInfo.innerHTML = "The request to get user location timed out.";
+                    break;
+                 case error.UNKNOWN_ERROR:
+                    weatherInfo.innerHTML = "An unknown error occurred.";
+                    break;}
+                weatherInfo.className = 'error';}
+        
+    </script>
+
+</body>
+<footer>
+    &copy; 2024 Forward Motion Bikes |
+</footer>
+</html>
+
+
